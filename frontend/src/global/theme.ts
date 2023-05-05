@@ -1,0 +1,43 @@
+export default {
+  colors: {
+    primary_lighter: "#4CC6FE",
+    primary_branding: "#21A3DE",
+    primary_darker: "#1080B2",
+    secondary_lighter: "#FD7E44",
+    secondary_branding: "#DE5C21",
+    secondary_darker: "#BE4108",
+    white: "#ffffff",
+    neutral: {
+      50: "#EEEEEE",
+      200: "#DBDBDB",
+      400: "#BFBFBF",
+      600: "#7A7A7A",
+      800: "#383838",
+    },
+    success: "#388824",
+    alert: "#C82626",
+    warning: "#C88726",
+  },
+  fonts: {
+    h1: 96,
+    h2: 60,
+    h3: 48,
+    h4: 34,
+    h5: 24,
+    h6: 20,
+    regular: 16,
+    medium: 14,
+    small: 12,
+    semi_small: 8,
+    extra_small: 6,
+  },
+  fontWeight: {
+    regular: 400,
+    medium: 500,
+    semi_bold: 600,
+    bold: 700,
+  },
+  shadow: {
+    default: "0px 2px 6px 0px rgba(0, 0, 0, 0.15)",
+  },
+};

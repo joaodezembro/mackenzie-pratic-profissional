@@ -1,0 +1,62 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "airbnb",
+    "prettier",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx"
+        ]
+      }
+    }
+  },
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "prettier"
+  ],
+  "rules": {
+    "import/no-unresolved": [
+      0,
+      {
+        "caseSensitive": false
+      }
+    ],
+    "react/jsx-props-no-spreading": "off",
+    "import/prefer-default-export": "off",
+    "import/extensions": "off",
+    "import/no-extraneous-dependencies": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "react/require-default-props": "off",
+    "react/destructuring-assignment": "off",
+    "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/no-empty-function": "off",
+    "react/function-component-definition": "off",
+    "@typescript-eslint/no-empty-interface": "off",
+    "react/jsx-filename-extension": "off",
+    "react/no-unstable-nested-components": "off",
+    "jsx-a11y/alt-text": "off",
+    "react/no-array-index-key": "off",
+    "no-shadow": "off",
+    "no-param-reassign": "off"
+  }
+}
