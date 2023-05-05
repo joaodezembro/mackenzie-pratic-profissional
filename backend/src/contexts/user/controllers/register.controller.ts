@@ -31,7 +31,10 @@ export class RegisterController implements Controller {
       }
 
       // Criar usuario
-      const userResponse = await this.registerUseCase.execute(user);
+      const userResponse = await this.registerUseCase.execute({
+        ...user,
+        ...{ birthDate: new Date(user.birthDate) },
+      });
       if (userResponse.isFailure) {
         return badRequest(userResponse.error);
       }
