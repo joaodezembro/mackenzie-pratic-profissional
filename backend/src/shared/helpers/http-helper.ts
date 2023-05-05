@@ -2,9 +2,9 @@
 import Bugsnag from "@bugsnag/js";
 import { env } from "process";
 import { HttpResponse } from "../protocols/http";
-import { UnauthorizedError } from "../errors/unauthorized-error";
-import { TooManyRequestsError } from "../errors/too-many-requests-error";
-import { ServerError } from "../errors/server-error";
+import { UnauthorizedError } from "../errors/server/unauthorized-error";
+import { TooManyRequestsError } from "../errors/server/too-many-requests-error";
+import { ServerError } from "../errors/server/server-error";
 
 export const badRequest = (error: Error): HttpResponse => ({
   statusCode: 400,
