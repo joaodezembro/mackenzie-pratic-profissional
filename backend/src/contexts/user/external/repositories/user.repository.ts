@@ -7,11 +7,12 @@ export class UserRepository {
     private userCollection = AppDataSource.getRepository(UserEntity),
   ) {}
 
-  async create(data: Omit<IUserModel, "id">): Promise<IUserModel> {
+  async create(
+    data: Omit<IUserModel, "id" | "createdAt" | "updatedAt">,
+  ): Promise<IUserModel> {
     const insertedUser = this.userCollection.create({
       ...data,
       cpf: data.cpf.replace(/\D/g, ""),
-      cnpj: data.cnpj.replace(/\D/g, ""),
     });
     return await this.userCollection.save(insertedUser);
   }

@@ -1,11 +1,11 @@
-import { IAccountModel } from "@contexts/userAccess/domain/models/account-model.struct";
+import { IUserModel } from "../../../contexts/user/domain/models/user.model";
 
 export {};
 
 declare global {
   namespace Express {
     interface IRequest {
-      account?: IAccountModel;
+      user?: IUserModel;
     }
   }
 }

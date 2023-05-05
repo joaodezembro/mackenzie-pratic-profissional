@@ -1,11 +1,21 @@
+/* eslint-disable no-use-before-define */
 import {
   Column,
   CreateDateColumn,
   Entity,
+  JoinColumn,
+  ManyToMany,
+  OneToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from "typeorm";
+import { CompanyEntity } from "../../../company/external/entities/company.entity";
 import { IUserModel } from "../../domain/models/user.model";
+
+export enum UserTypeEnum {
+  COMPANY = "company",
+  COLLABORATOR = "collaborator",
+}
 
 @Entity("users")
 export class UserEntity implements IUserModel {
@@ -24,8 +34,16 @@ export class UserEntity implements IUserModel {
   @Column({ unique: true })
   cpf: string;
 
-  @Column({ unique: true })
-  cnpj: string;
+  @OneToOne(() => CompanyEntity, company => company.id)
+  @JoinColumn({ name: "companyId" })
+  company?: CompanyEntity;
+
+  @ManyToMany(() => UserEntity, user => user.id)
+  @JoinColumn({ name: "collaborators" })
+  collaborators?: UserEntity[];
+
+  @Column()
+  type: UserTypeEnum;
 
   @Column()
   birthDate: Date;
