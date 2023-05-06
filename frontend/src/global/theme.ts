@@ -32,6 +32,7 @@ export default {
     extra_small: 6,
   },
   fontWeight: {
+    light: 100,
     regular: 400,
     medium: 500,
     semi_bold: 600,

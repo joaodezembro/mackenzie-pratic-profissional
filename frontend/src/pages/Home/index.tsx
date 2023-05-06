@@ -10,7 +10,7 @@ const Home: React.FC<IHomeProps> = () => {
   const { GetUserData } = UserFullContext();
 
   useEffect(() => {
-    if (!GetUserData().sessionToken) {
+    if (!GetUserData().sessionToken || GetUserData().sessionToken.length === 0) {
       navigate("/sign-in");
     } else if (GetUserData().type === UserTypeEnum.COLLABORATOR) {
       navigate("/collaborator");

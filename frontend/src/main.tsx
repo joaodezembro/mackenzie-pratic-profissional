@@ -10,10 +10,10 @@ import MainRoutes from "./routes";
 import theme from "./global/theme";
 import "./global/styles.css";
 // import { ModalProvider } from "./contexts/ModalContext";
-// import { ToastProvider } from "./contexts/ToastContext";
+import { ToastProvider } from "./contexts/ToastContext";
 // import { ModalList } from "./components/Modal";
-// import { ToastComponent } from "./components/Toast";
-// import { UserProvider } from "./contexts/UserContext";
+import { ToastComponent } from "./components/toast";
+import { UserProvider } from "./contexts/UserContext";
 import { EnvironmentConfig } from "./configs/enviroment-config";
 
 const queryClient = new QueryClient();
@@ -21,17 +21,17 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <BrowserRouter>
       <QueryClientProvider client={queryClient}>
-        {/* <ModalProvider>
+        {/* <ModalProvider> */}
           <ToastProvider>
-            <UserProvider> */}
+            <UserProvider>
               <ThemeProvider theme={theme}>
                 <MainRoutes />
-                {/* <ToastComponent />
-                <ModalList /> */}
+                <ToastComponent />
+                {/* <ModalList /> */}
               </ThemeProvider>
-            {/* </UserProvider>
+            </UserProvider>
           </ToastProvider>
-        </ModalProvider> */}
+        {/* </ModalProvider> */}
       </QueryClientProvider>
     </BrowserRouter>
   </React.StrictMode>,

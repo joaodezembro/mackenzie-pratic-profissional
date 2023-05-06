@@ -3,8 +3,8 @@ import React from "react";
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 // import SignUp from "../pages/SignUp";
 // import Home from "../pages/Home";
-import Home from "@pages/Home";
-import SignIn from "@pages/SignIn";
+import Home from "@pages/home";
+import SignIn from "@pages/sign-in";
 import { BodyContainer } from "./styles";
 import { UserFullContext, UserTypeEnum } from "@/contexts/UserContext";
 

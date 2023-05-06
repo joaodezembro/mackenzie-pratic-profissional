@@ -29,11 +29,12 @@ export class UserRepository {
     });
   }
 
-  async findByEmail(email: string): Promise<IUserModel> {
+  async findByEmail(email: string, relations?: string[]): Promise<IUserModel> {
     return await this.userCollection.findOne({
       where: {
         email,
       },
+      relations,
     });
   }
 

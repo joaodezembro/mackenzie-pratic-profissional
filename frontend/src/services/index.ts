@@ -1,4 +1,5 @@
-// import { AccountService } from "./account-service";
+import { AccountService } from "./account-service";
+
 // import { CollaboratorService } from "./collaborator-service";
 // import { CompanyService } from "./company-service";
 // import { ContractService } from "./contract-service"
@@ -9,6 +10,7 @@
 // import { PendencyService } from "./pendency-service";
 // import { ProfileService } from "./profile-service";
 // import { TokenService } from "./token-service";
+
 
 export class Services {
   // static Contract = ContractService;
@@ -23,7 +25,7 @@ export class Services {
 
   // static Pendency = PendencyService;
 
-  // static Account = AccountService;
+  static Account = AccountService;
 
   // static PaymentGuide = PaymentGuideService;
 
