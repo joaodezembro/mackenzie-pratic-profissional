@@ -6,6 +6,8 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import { ThemeProvider } from "styled-components";
 
 import { BrowserRouter } from "react-router-dom";
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import MainRoutes from "./routes";
 import theme from "./global/theme";
 import "./global/styles.css";
@@ -14,7 +16,7 @@ import { ToastProvider } from "./contexts/ToastContext";
 // import { ModalList } from "./components/Modal";
 import { ToastComponent } from "./components/toast";
 import { UserProvider } from "./contexts/UserContext";
-import { EnvironmentConfig } from "./configs/enviroment-config";
+
 
 const queryClient = new QueryClient();
 ReactDOM.createRoot(document.getElementById("root")!).render(
@@ -24,11 +26,13 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         {/* <ModalProvider> */}
           <ToastProvider>
             <UserProvider>
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
               <ThemeProvider theme={theme}>
                 <MainRoutes />
                 <ToastComponent />
                 {/* <ModalList /> */}
               </ThemeProvider>
+            </LocalizationProvider>
             </UserProvider>
           </ToastProvider>
         {/* </ModalProvider> */}
