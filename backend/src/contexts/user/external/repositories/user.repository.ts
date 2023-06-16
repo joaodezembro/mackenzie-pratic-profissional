@@ -26,6 +26,23 @@ export class UserRepository {
       where: {
         id,
       },
+      relations: {
+        company: true,
+      },
+    });
+  }
+
+  async findAllCollaboratorsByCompanyId(id: string): Promise<IUserModel[]> {
+    return await this.userCollection.find({
+      where: {
+        contractor: {
+          id,
+        },
+      },
+      relations: {
+        company: true,
+        contractor: true,
+      },
     });
   }
 

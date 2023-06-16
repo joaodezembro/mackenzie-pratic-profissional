@@ -7,7 +7,10 @@ export class NewCompanyUseCase {
   constructor(private companyRepository: CompanyRepository) {}
 
   async execute(
-    company: Omit<ICompanyModel, "id" | "createdAt" | "updatedAt">,
+    company: Omit<
+      ICompanyModel,
+      "id" | "createdAt" | "updatedAt" | "collaborators"
+    >,
   ): Promise<Result<ICompanyModel>> {
     const emailAlreadyExists = await this.companyRepository.findByCnpj(
       company.cnpj,
@@ -16,7 +19,10 @@ export class NewCompanyUseCase {
       return Result.fail(new CompanyAlreadyExists());
     }
 
-    const created = await this.companyRepository.create(company);
+    const created = await this.companyRepository.create({
+      ...company,
+      ...{ collaborators: [] },
+    });
 
     return Result.ok(created);
   }

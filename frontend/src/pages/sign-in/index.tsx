@@ -44,7 +44,7 @@ const SignIn: React.FC<ISignInProps> = () => {
 
   const handleSignIn = async () => {
     try {
-      if (!email || !password) return;
+      if (!valid) return;
 
       const { token, user } = await Services.Account.signIn(email, password);
 
@@ -76,7 +76,6 @@ const SignIn: React.FC<ISignInProps> = () => {
         <Center>
           <Title>ContrataMEI</Title>
           <Subtitle>Faça o login para acessar o sistema ou&nbsp;<Link href="/sign-up">clique aqui</Link>&nbsp;para se registrar</Subtitle>
-          {valid}
           <TextField label="Digite seu email" name="email" type="email" onChange={(e) => setEmail(e.target.value)}/>
           <TextField margin="dense" label="Digite sua senha" name="password" type="password" onChange={(e) => setPassword(e.target.value)}/>
           <SimpleButton title="Entrar" onClick={handleSignIn} disabled={!valid}/>

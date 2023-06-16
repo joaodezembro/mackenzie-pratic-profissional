@@ -2,11 +2,12 @@ import React from "react";
 
 import { Header, Title } from "./styles";
 
-interface ISimpleButtonProps {
+interface IProps {
+  logo?: boolean;
 }
 
-export const SimpleHeader = (props: ISimpleButtonProps) => (
+export const SimpleHeader = (props: IProps) => (
   <Header>
-    <Title>ContrataMEI</Title>
+    {(props.logo ?? true) ?? (<Title>ContrataMEI</Title>)}
   </Header>
 );

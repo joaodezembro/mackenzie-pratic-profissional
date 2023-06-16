@@ -35,6 +35,7 @@
 		"axios": "^0.27.2",
 		"dayjs": "^1.11.7",
 		"dotenv": "^16.0.3",
+		"mui-file-input": "^2.0.0",
 		"pdfjs-dist": "^2.16.105",
 		"react": "^18.0.0",
 		"react-dom": "^18.0.0",

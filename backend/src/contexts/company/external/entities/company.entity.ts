@@ -3,6 +3,7 @@ import {
   CreateDateColumn,
   Entity,
   JoinColumn,
+  OneToMany,
   OneToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
@@ -18,6 +19,10 @@ export class CompanyEntity implements ICompanyModel {
   @OneToOne(() => UserEntity, user => user.id)
   @JoinColumn({ name: "userId" })
   user: UserEntity;
+
+  @OneToMany(() => UserEntity, user => user.id)
+  @JoinColumn({ name: "userId" })
+  collaborators?: UserEntity[];
 
   @Column({ unique: true })
   cnpj: string;

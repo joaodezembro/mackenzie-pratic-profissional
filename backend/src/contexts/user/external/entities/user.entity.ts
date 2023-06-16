@@ -5,6 +5,7 @@ import {
   Entity,
   JoinColumn,
   ManyToMany,
+  ManyToOne,
   OneToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
@@ -37,6 +38,10 @@ export class UserEntity implements IUserModel {
   @OneToOne(() => CompanyEntity, company => company.id)
   @JoinColumn({ name: "companyId" })
   company?: CompanyEntity;
+
+  @ManyToOne(() => CompanyEntity, company => company.id)
+  @JoinColumn({ name: "contractorId" })
+  contractor?: CompanyEntity;
 
   @ManyToMany(() => UserEntity, user => user.id)
   @JoinColumn({ name: "collaborators" })

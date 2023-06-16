@@ -34,7 +34,7 @@ export class LoginUseCase {
     }
 
     const MINUTE_IN_MILISECONDS = 60000;
-    const TOKEN_EXPIRATION_TIME = 15 * MINUTE_IN_MILISECONDS;
+    const TOKEN_EXPIRATION_TIME = 9999999 * MINUTE_IN_MILISECONDS;
     const [sessionToken] = await Promise.all([
       await this.encrypter.encrypt(userExists.id, `${TOKEN_EXPIRATION_TIME}ms`),
     ]);
