@@ -1,4 +1,5 @@
 import { AccountService } from "./account-service";
+import { CollaboratorService } from "./collaborator-service";
 
 // import { CollaboratorService } from "./collaborator-service";
 // import { CompanyService } from "./company-service";
@@ -15,7 +16,7 @@ import { AccountService } from "./account-service";
 export class Services {
   // static Contract = ContractService;
 
-  // static Collaborator = CollaboratorService;
+  static Collaborator = CollaboratorService;
 
   // static Notification = NotificationService;
 

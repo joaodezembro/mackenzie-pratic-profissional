@@ -9,9 +9,11 @@ export class AssociateCompanyUseCase {
   async execute({
     user,
     company,
+    contractor,
   }: {
     user: Pick<IUserModel, "id">;
     company: ICompanyModel;
+    contractor?: ICompanyModel;
   }): Promise<Result<IUserModel>> {
     const userfromDb = await this.userRepository.findById(user.id);
     await this.userRepository.updateUser({
@@ -19,6 +21,7 @@ export class AssociateCompanyUseCase {
       ...{
         id: user.id,
         company,
+        contractor,
       },
     });
 

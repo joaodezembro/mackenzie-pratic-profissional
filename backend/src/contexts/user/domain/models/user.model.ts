@@ -8,6 +8,7 @@ export interface IUserModel {
   password: string;
   cpf: string;
   company?: CompanyEntity;
+  contractor?: CompanyEntity;
   collaborators?: IUserModel[];
   type: UserTypeEnum;
   birthDate: Date;

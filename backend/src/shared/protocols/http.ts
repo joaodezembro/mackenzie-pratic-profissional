@@ -1,5 +1,5 @@
-import { IAccountModel } from "@contexts/userAccess/domain/models/account-model.struct";
 import { FileResponse } from "./file";
+import { IUserModel } from "../../contexts/user/domain/models/user.model";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 export interface HttpResponse {
@@ -11,9 +11,8 @@ export interface HttpResponse {
 export interface HttpRequest {
   params?: any;
   query?: any;
-  body?: any;
+  body?: any & { user?: IUserModel };
   headers?: any;
-  account?: IAccountModel;
   userId?: string;
   token?: string;
   file?: Express.Multer.File;

@@ -8,8 +8,10 @@ export default {
     secondary_darker: "#BE4108",
     white: "#ffffff",
     neutral: {
+      25: "#f7f7f7",
       50: "#EEEEEE",
       200: "#DBDBDB",
+      300: "#CFCFCF",
       400: "#BFBFBF",
       600: "#7A7A7A",
       800: "#383838",
